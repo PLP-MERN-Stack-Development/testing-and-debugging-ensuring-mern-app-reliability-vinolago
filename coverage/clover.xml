@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1762861092615" clover="3.2.0">
+  <project timestamp="1762861092616" name="All files">
+    <metrics statements="55" coveredstatements="54" conditionals="28" coveredconditionals="25" methods="15" coveredmethods="15" elements="98" coveredelements="94" complexity="0" loc="55" ncloc="55" packages="3" files="3" classes="3"/>
+    <package name="components">
+      <metrics statements="11" coveredstatements="11" conditionals="12" coveredconditionals="9" methods="2" coveredmethods="2"/>
+      <file name="Button.jsx" path="C:\Users\User\Desktop\testing-and-debugging-ensuring-mern-app-reliability-vinolago\client\src\components\Button.jsx">
+        <metrics statements="11" coveredstatements="11" conditionals="12" coveredconditionals="9" methods="2" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="29" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="12" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="21" coveredstatements="20" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+      <file name="useLocalStorage.js" path="C:\Users\User\Desktop\testing-and-debugging-ensuring-mern-app-reliability-vinolago\client\src\hooks\useLocalStorage.js">
+        <metrics statements="21" coveredstatements="20" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="24" count="11" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="34" count="11" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="36" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="8" type="stmt"/>
+        <line num="46" count="8" type="stmt"/>
+        <line num="49" count="11" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="23" coveredstatements="23" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7"/>
+      <file name="helpers.js" path="C:\Users\User\Desktop\testing-and-debugging-ensuring-mern-app-reliability-vinolago\client\src\utils\helpers.js">
+        <metrics statements="23" coveredstatements="23" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="17" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="34" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="44" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="6" type="stmt"/>
+        <line num="46" count="6" type="stmt"/>
+        <line num="47" count="6" type="stmt"/>
+        <line num="48" count="139" type="stmt"/>
+        <line num="50" count="6" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="62" count="4" type="stmt"/>
+        <line num="63" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
