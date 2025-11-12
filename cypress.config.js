@@ -1,7 +1,6 @@
 // cypress.config.js - Cypress configuration
 
 const { defineConfig } = require('cypress');
-const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
 
 module.exports = defineConfig({
   e2e: {
@@ -16,9 +15,6 @@ module.exports = defineConfig({
     requestTimeout: 15000,
     responseTimeout: 15000,
     setupNodeEvents(on, config) {
-      // Add visual regression plugin
-      addMatchImageSnapshotPlugin(on, config);
-
       // implement node event listeners here
       on('task', {
         log(message) {

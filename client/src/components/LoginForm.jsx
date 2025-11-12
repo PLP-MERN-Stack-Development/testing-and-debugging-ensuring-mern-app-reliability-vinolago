@@ -1,7 +1,7 @@
 // client/src/components/LoginForm.jsx - Login form component
 
 import React, { useState } from 'react';
-import { Button } from './Button';
+import Button from './Button';
 
 const LoginForm = ({ onSubmit, loading = false }) => {
   const [formData, setFormData] = useState({

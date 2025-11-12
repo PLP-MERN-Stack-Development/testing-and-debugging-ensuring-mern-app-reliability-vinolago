@@ -58,7 +58,7 @@ const extractToken = (authHeader) => {
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return null;
   }
-  return authHeader.substring(7);
+  return authHeader.substring(7).trim();
 };
 
 module.exports = {

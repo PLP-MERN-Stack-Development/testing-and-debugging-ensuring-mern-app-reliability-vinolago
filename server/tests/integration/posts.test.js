@@ -18,7 +18,10 @@ beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();
   const mongoUri = mongoServer.getUri();
   await mongoose.connect(mongoUri);
+}, 60000); // Increase timeout for MongoDB download
 
+// Create test data before each test
+beforeEach(async () => {
   // Create a test user
   const user = await User.create({
     username: 'testuser',

@@ -197,15 +197,16 @@ describe('LoginForm Integration', () => {
     fireEvent.change(passwordInput, { target: { value: 'wrongpassword' } });
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(fetch).toHaveBeenCalledWith('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: 'wrong@example.com',
-          password: 'wrongpassword',
-        }),
-      });
+    // Wait for the error to be thrown and handled
+    await expect(mockOnSubmit).rejects.toThrow('Invalid credentials');
+
+    expect(fetch).toHaveBeenCalledWith('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: 'wrong@example.com',
+        password: 'wrongpassword',
+      }),
     });
 
     consoleSpy.mockRestore();

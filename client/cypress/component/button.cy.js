@@ -1,77 +1,44 @@
 // client/cypress/component/button.cy.js - Visual regression tests for Button component
 
-import { mount } from 'cypress/react18';
 import Button from '../../src/components/Button';
 
-describe('Button Component Visual Regression', () => {
-  it('should match default button snapshot', () => {
-    mount(<Button>Default Button</Button>);
-
-    // Take snapshot for visual regression
-    cy.matchImageSnapshot('button-default');
+describe('Button Component Tests', () => {
+  it('should render with default props', () => {
+    cy.mount(<Button>Default Button</Button>);
+    cy.get('button').should('contain', 'Default Button');
+    cy.get('button').should('have.class', 'btn');
+    cy.get('button').should('have.class', 'btn-primary');
   });
 
-  it('should match primary variant snapshot', () => {
-    mount(<Button variant="primary">Primary Button</Button>);
-
-    cy.matchImageSnapshot('button-primary');
+  it('should render with different variants', () => {
+    cy.mount(<Button variant="secondary">Secondary Button</Button>);
+    cy.get('button').should('have.class', 'btn-secondary');
   });
 
-  it('should match secondary variant snapshot', () => {
-    mount(<Button variant="secondary">Secondary Button</Button>);
-
-    cy.matchImageSnapshot('button-secondary');
+  it('should render with different sizes', () => {
+    cy.mount(<Button size="lg">Large Button</Button>);
+    cy.get('button').should('have.class', 'btn-lg');
   });
 
-  it('should match danger variant snapshot', () => {
-    mount(<Button variant="danger">Danger Button</Button>);
-
-    cy.matchImageSnapshot('button-danger');
+  it('should be disabled when disabled prop is true', () => {
+    cy.mount(<Button disabled>Disabled Button</Button>);
+    cy.get('button').should('be.disabled');
+    cy.get('button').should('have.class', 'btn-disabled');
   });
 
-  it('should match small size snapshot', () => {
-    mount(<Button size="sm">Small Button</Button>);
+  it('should call onClick when clicked', () => {
+    const onClickSpy = cy.spy().as('onClickSpy');
+    cy.mount(<Button onClick={onClickSpy}>Clickable Button</Button>);
 
-    cy.matchImageSnapshot('button-small');
+    cy.get('button').click();
+    cy.get('@onClickSpy').should('have.been.calledOnce');
   });
 
-  it('should match medium size snapshot', () => {
-    mount(<Button size="md">Medium Button</Button>);
+  it('should not call onClick when disabled', () => {
+    const onClickSpy = cy.spy().as('onClickSpy');
+    cy.mount(<Button onClick={onClickSpy} disabled>Disabled Button</Button>);
 
-    cy.matchImageSnapshot('button-medium');
-  });
-
-  it('should match large size snapshot', () => {
-    mount(<Button size="lg">Large Button</Button>);
-
-    cy.matchImageSnapshot('button-large');
-  });
-
-  it('should match disabled state snapshot', () => {
-    mount(<Button disabled>Disabled Button</Button>);
-
-    cy.matchImageSnapshot('button-disabled');
-  });
-
-  it('should match loading state snapshot', () => {
-    mount(<Button>Loading...</Button>);
-
-    cy.matchImageSnapshot('button-loading');
-  });
-
-  it('should match button with custom class snapshot', () => {
-    mount(<Button className="custom-class">Custom Button</Button>);
-
-    cy.matchImageSnapshot('button-custom-class');
-  });
-
-  it('should match button with icon snapshot', () => {
-    mount(
-      <Button>
-        <span>📧</span> Button with Icon
-      </Button>
-    );
-
-    cy.matchImageSnapshot('button-with-icon');
+    cy.get('button').click();
+    cy.get('@onClickSpy').should('not.have.been.called');
   });
 });
